@@ -17,12 +17,12 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     var emojis = ["😂", "🤷‍♂️", "🤔", "🌚", "🌝", "😏", "🤦‍♂️", "🙄", "🎉", "👀", "💯", "🐶", "😘"]
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10;
+        return emojis.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath) as! EmojiCollectionViewCell
-        
+        cell.label.text = emojis[indexPath.item]
         return cell;
     }
     
