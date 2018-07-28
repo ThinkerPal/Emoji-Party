@@ -18,6 +18,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     var emojis = ["😂", "🤷‍♂️", "🤔", "🌚", "🌝", "😏", "🤦‍♂️", "🙄", "🎉", "👀", "💯", "🐶", "😘"]
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return emojis.count;
+        print emojis.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
