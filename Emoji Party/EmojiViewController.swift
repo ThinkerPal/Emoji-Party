@@ -8,13 +8,26 @@
 
 import UIKit
 
-class EmojiViewController: UIViewController {
+private let REUSE_IDENTIFIER = "Cell"
+
+class EmojiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
+        return cell;
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var mainView: UIView!
+    
 }
 
