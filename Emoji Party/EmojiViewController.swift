@@ -11,12 +11,18 @@ import UIKit
 private let REUSE_IDENTIFIER = "Cell"
 
 class EmojiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var mainView: UIView!
+    
+    var emojis = ["😂", "🤷‍♂️", "🤔", "🌚", "🌝", "😏", "🤦‍♂️", "🙄", "🎉", "👀", "💯", "🐶", "😘"]
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1;
+        return 10;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath) as! EmojiCollectionViewCell
+        
         return cell;
     }
     
@@ -25,9 +31,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBOutlet weak var mainView: UIView!
+
     
 }
 
